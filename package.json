@@ -25,12 +25,11 @@
     "vue3-ts-jsoneditor": "^2.8.2"
   },
   "devDependencies": {
-    "@tauri-apps/api": "^1.2.0",
-    "vue": "^3.2.47",
+    "@tauri-apps/cli": "^1.2.3",
+    "@tauri-release/cli": "^0.2.5",
     "vue3-ts-jsoneditor": "^2.8.2",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
-    "@tauri-apps/cli": "^1.2.3",
     "@types/node": "^18.15.6",
     "@vitejs/plugin-vue": "^4.1.0",
     "typescript": "^5.0.2",

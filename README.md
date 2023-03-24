@@ -6,5 +6,5 @@
 </h1>
 
 <h3 align="center">
-A JsonEditor GUI based on tauri. Supports Windows, macOS and Linux..
+A JsonEditor GUI based on tauri. Supports Windows, macOS and Linux.
 </h3>

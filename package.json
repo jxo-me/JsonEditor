@@ -1,0 +1,40 @@
+{
+  "name": "jsoneditor",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev:fe": "vite",
+    "build:fe": "vue-tsc --noEmit && vite build",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "updater": "tr updater",
+    "release": "tr release --git",
+    "fix:conf": "tr override --json.tauri_updater_active=false",
+    "fix:tray": "tr override --json.tauri_systemTray_iconPath=\"icons/tray-icon-light.png\" --json.tauri_systemTray_iconAsTemplate=false",
+    "fix:tray:mac": "tr override --json.tauri_systemTray_iconPath=\"icons/tray-icon.png\" --json.tauri_systemTray_iconAsTemplate=true",
+    "download": "tr download --mdfile=README.md,README-ZH_CN.md --f1=52 --f2=43",
+    "fmt:rs": "cargo fmt",
+    "tr": "tr",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.2.0",
+    "vue": "^3.2.47",
+    "vue3-ts-jsoneditor": "^2.8.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/api": "^1.2.0",
+    "vue": "^3.2.47",
+    "vue3-ts-jsoneditor": "^2.8.2",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@tauri-apps/cli": "^1.2.3",
+    "@types/node": "^18.15.6",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
+    "vue-tsc": "^1.2.0"
+  }
+}

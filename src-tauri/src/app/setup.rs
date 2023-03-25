@@ -1,12 +1,12 @@
 use crate::{conf::AppConf, utils};
-use log::{error, info};
-use tauri::{utils::config::WindowUrl, window::WindowBuilder, App, Manager};
+use log::{info};
+use tauri::{utils::config::WindowUrl, window::WindowBuilder, App};
 
 pub fn init(app: &mut App) -> std::result::Result<(), Box<dyn std::error::Error>> {
   info!("stepup");
   let app_conf = AppConf::read();
   let theme = AppConf::theme_mode();
-  let handle = app.app_handle();
+  // let handle = app.app_handle();
 
   let app_conf = app_conf.clone();
   if app_conf.hide_dock_icon {

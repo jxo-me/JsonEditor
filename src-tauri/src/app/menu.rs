@@ -336,11 +336,12 @@ pub fn tray_handler(handle: &AppHandle, event: SystemTrayEvent) {
       }
       "show_core" => {
         if let Some(core_win) = app.get_window("core") {
-          let tray_win = app.get_window("tray").unwrap();
+          println!("get_window:{:?}", core_win.is_visible());
+          // let tray_win = app.get_window("tray").unwrap();
           if !core_win.is_visible().unwrap() {
             core_win.show().unwrap();
             core_win.set_focus().unwrap();
-            tray_win.hide().unwrap();
+            // tray_win.hide().unwrap();
           }
         };
       }

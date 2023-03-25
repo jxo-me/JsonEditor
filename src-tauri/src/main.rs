@@ -19,7 +19,7 @@ fn main() {
 
   let context = tauri::generate_context!();
 
-  let mut log = tauri_plugin_log::Builder::default()
+  let log = tauri_plugin_log::Builder::default()
     .targets([
       // LogTarget::LogDir,
       // LOG PATH: ~/.quickType/quickType.log

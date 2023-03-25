@@ -1,8 +1,7 @@
 use anyhow::Result;
-use log::{error, info};
+use log::{info};
 
 use std::{
-  collections::HashMap,
   fs::{self, File},
   path::{Path, PathBuf},
   process::Command,
@@ -81,25 +80,6 @@ pub fn clear_conf(app: &tauri::AppHandle) {
       }
     },
   );
-}
-
-pub async fn get_data(
-  url: &str,
-  app: Option<&tauri::AppHandle>,
-) -> Result<Option<String>, reqwest::Error> {
-  let res = reqwest::get(url).await?;
-  let is_ok = res.status() == 200;
-  let body = res.text().await?;
-
-  if is_ok {
-    Ok(Some(body))
-  } else {
-    error!("quick_http: {}", body);
-    if let Some(v) = app {
-      tauri::api::dialog::message(v.get_window("core").as_ref(), "JsonEditor HTTP", body);
-    }
-    Ok(None)
-  }
 }
 
 pub fn run_check_update(app: AppHandle<Wry>, silent: bool, has_msg: Option<bool>) {
@@ -201,24 +181,4 @@ pub async fn silent_install(app: AppHandle<Wry>, update: UpdateResponse<Wry>) ->
   }
 
   Ok(())
-}
-
-pub fn is_hidden(entry: &walkdir::DirEntry) -> bool {
-  entry
-    .file_name()
-    .to_str()
-    .map(|s| s.starts_with('.'))
-    .unwrap_or(false)
-}
-
-pub fn vec_to_hashmap(
-  vec: impl Iterator<Item = serde_json::Value>,
-  key: &str,
-  map: &mut HashMap<String, serde_json::Value>,
-) {
-  for v in vec {
-    if let Some(kval) = v.get(key).and_then(serde_json::Value::as_str) {
-      map.insert(kval.to_string(), v);
-    }
-  }
 }

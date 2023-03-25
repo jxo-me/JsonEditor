@@ -13,10 +13,38 @@
   "tauri": {
     "allowlist": {
       "all": false,
-      "shell": {
+      "globalShortcut": {
+        "all": true
+      },
+      "fs": {
         "all": false,
-        "open": true
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "createDir": true,
+        "exists": true,
+        "removeFile": true,
+        "removeDir": true,
+        "scope": [
+          "$HOME/.jsonEditor/**"
+        ]
+      },
+      "path": {
+        "all": true
+      },
+      "os": {
+        "all": true
+      },
+      "process": {
+        "all": true,
+        "exit": true,
+        "relaunch": true,
+        "relaunchDangerousAllowSymlinkMacos": true
       }
+    },
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
     },
     "bundle": {
       "active": true,
@@ -43,12 +71,16 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "",
+      "shortDescription": "JsonEditor",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
         "timestampUrl": "",
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "embedBootstrapper"
+        },
         "wix": {
           "language": [
             "zh-CN"
@@ -66,19 +98,6 @@
         "https://jxo-me.github.io/JsonEditor/install.json"
       ],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEZGQTcwRDBFQkQzQzQwRDYKUldUV1FEeTlEZzJuLzgyRVNtWEMxcUk2TnJJS05vRHVPTit6cWlYWDhKNjFTd0psTm85RjEwbisK"
-    },
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "JsonEditor",
-        "width": 800
-      }
-    ],
-    "systemTray": {
-      "iconPath": "icons/icon.png",
-      "iconAsTemplate": true
     }
   }
 }

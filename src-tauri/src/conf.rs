@@ -11,7 +11,6 @@ use crate::utils::{app_root, create_file, exists};
 pub const APP_CONF_PATH: &str = "editor.conf.json";
 pub const UPDATE_LOG_URL: &str = "https://github.com/jxo-me/JsonEditor/blob/main/UPDATE_LOG.md";
 
-
 macro_rules! pub_struct {
     ($name:ident {$($field:ident: $t:ty,)*}) => {
       #[derive(serde::Serialize, serde::Deserialize, Debug, Clone)]

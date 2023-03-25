@@ -29,6 +29,102 @@ pub fn init() -> Menu {
     ]),
   );
 
+  let stay_on_top =
+    CustomMenuItem::new("stay_on_top".to_string(), "Stay On Top").accelerator("CmdOrCtrl+T");
+  let stay_on_top_menu = if app_conf.stay_on_top {
+    stay_on_top.selected()
+  } else {
+    stay_on_top
+  };
+
+  let theme_light = CustomMenuItem::new("theme_light".to_string(), "Light");
+  let theme_dark = CustomMenuItem::new("theme_dark".to_string(), "Dark");
+  let theme_system = CustomMenuItem::new("theme_system".to_string(), "System");
+  let is_dark = app_conf.clone().theme_check("dark");
+  let is_system = app_conf.clone().theme_check("system");
+
+  let update_prompt = CustomMenuItem::new("update_prompt".to_string(), "Prompt");
+  let update_silent = CustomMenuItem::new("update_silent".to_string(), "Silent");
+  // let _update_disable = CustomMenuItem::new("update_disable".to_string(), "Disable");
+
+  #[cfg(target_os = "macos")]
+  let titlebar = CustomMenuItem::new("titlebar".to_string(), "Titlebar").accelerator("CmdOrCtrl+B");
+  #[cfg(target_os = "macos")]
+  let titlebar_menu = if app_conf.titlebar {
+    titlebar.selected()
+  } else {
+    titlebar
+  };
+
+  let system_tray = CustomMenuItem::new("system_tray".to_string(), "System Tray");
+  let system_tray_menu = if app_conf.tray {
+    system_tray.selected()
+  } else {
+    system_tray
+  };
+
+  let auto_update = app_conf.get_auto_update();
+  let preferences_menu = Submenu::new(
+    "Preferences",
+    Menu::with_items([
+      stay_on_top_menu.into(),
+      #[cfg(target_os = "macos")]
+      titlebar_menu.into(),
+      #[cfg(target_os = "macos")]
+      CustomMenuItem::new("hide_dock_icon".to_string(), "Hide Dock Icon").into(),
+      system_tray_menu.into(),
+      MenuItem::Separator.into(),
+      Submenu::new(
+        "Theme",
+        Menu::new()
+          .add_item(if is_dark || is_system {
+            theme_light
+          } else {
+            theme_light.selected()
+          })
+          .add_item(if is_dark {
+            theme_dark.selected()
+          } else {
+            theme_dark
+          })
+          .add_item(if is_system {
+            theme_system.selected()
+          } else {
+            theme_system
+          }),
+      )
+      .into(),
+      Submenu::new(
+        "Auto Update",
+        Menu::new()
+          .add_item(if auto_update == "prompt" {
+            update_prompt.selected()
+          } else {
+            update_prompt
+          })
+          .add_item(if auto_update == "silent" {
+            update_silent.selected()
+          } else {
+            update_silent
+          }), // .add_item(if auto_update == "disable" {
+              //     update_disable.selected()
+              // } else {
+              //     update_disable
+              // })
+      )
+      .into(),
+      MenuItem::Separator.into(),
+      CustomMenuItem::new("go_conf".to_string(), "Go to Config")
+        .accelerator("CmdOrCtrl+Shift+G")
+        .into(),
+      CustomMenuItem::new("restart".to_string(), "Restart QuickType")
+        .accelerator("CmdOrCtrl+Shift+R")
+        .into(),
+      CustomMenuItem::new("clear_conf".to_string(), "Clear Config").into(),
+      MenuItem::Separator.into(),
+    ]),
+  );
+
   let edit_menu = Submenu::new(
     "Edit",
     Menu::new()
@@ -48,14 +144,12 @@ pub fn init() -> Menu {
         "jsoneditor_log".to_string(),
         "JsonEditor Log",
       ))
-      .add_item(CustomMenuItem::new("update_log".to_string(), "Update Log")), // .add_item(
-                                                                              //   CustomMenuItem::new("dev_tools".to_string(), "Toggle Developer Tools")
-                                                                              //     .accelerator("CmdOrCtrl+Shift+I"),
-                                                                              // ),
+      .add_item(CustomMenuItem::new("update_log".to_string(), "Update Log")),
   );
 
   Menu::new()
     .add_submenu(app_menu)
+    .add_submenu(preferences_menu)
     .add_submenu(edit_menu)
     .add_submenu(help_menu)
 }
@@ -77,11 +171,91 @@ pub fn menu_handler(event: WindowMenuEvent<tauri::Wry>) {
       );
     }
     "check_update" => {
-      println!("menu_handler check_update");
-      utils::run_check_update(app, false, None);
+      utils::run_check_update(app, false, Some(true));
+    }
+    // Preferences
+    "restart" => tauri::api::process::restart(&app.env()),
+    "go_conf" => utils::open_file(utils::app_root()),
+    "clear_conf" => utils::clear_conf(&app),
+    "hide_dock_icon" => {
+      AppConf::read()
+        .amend(serde_json::json!({ "hide_dock_icon": true }))
+        .write()
+        .restart(app);
+    }
+    "titlebar" => {
+      let app_conf = AppConf::read();
+      app_conf
+        .clone()
+        .amend(serde_json::json!({ "titlebar": !app_conf.titlebar }))
+        .write()
+        .restart(app);
+    }
+    "system_tray" => {
+      let app_conf = AppConf::read();
+      app_conf
+        .clone()
+        .amend(serde_json::json!({ "tray": !app_conf.tray }))
+        .write()
+        .restart(app);
+    }
+    "theme_light" | "theme_dark" | "theme_system" => {
+      let theme = match menu_id {
+        "theme_dark" => "dark",
+        "theme_system" => "system",
+        _ => "light",
+      };
+      AppConf::read()
+        .amend(serde_json::json!({ "theme": theme }))
+        .write()
+        .restart(app);
+    }
+    "update_prompt" | "update_silent" | "update_disable" => {
+      // for id in ["update_prompt", "update_silent", "update_disable"] {
+      for id in ["update_prompt", "update_silent"] {
+        menu_handle.get_item(id).set_selected(false).unwrap();
+      }
+      let auto_update = match menu_id {
+        "update_silent" => {
+          menu_handle
+            .get_item("update_silent")
+            .set_selected(true)
+            .unwrap();
+          "silent"
+        }
+        "update_disable" => {
+          menu_handle
+            .get_item("update_disable")
+            .set_selected(true)
+            .unwrap();
+          "disable"
+        }
+        _ => {
+          menu_handle
+            .get_item("update_prompt")
+            .set_selected(true)
+            .unwrap();
+          "prompt"
+        }
+      };
+      AppConf::read()
+        .amend(serde_json::json!({ "auto_update": auto_update }))
+        .write();
+    }
+    "stay_on_top" => {
+      let app_conf = AppConf::read();
+      let stay_on_top = !app_conf.stay_on_top;
+      menu_handle
+        .get_item(menu_id)
+        .set_selected(stay_on_top)
+        .unwrap();
+      win.set_always_on_top(stay_on_top).unwrap();
+      app_conf
+        .amend(serde_json::json!({ "stay_on_top": stay_on_top }))
+        .write();
     }
     // Help
-    "quicktype_log" => utils::open_file(utils::app_root().join("quicktype.log")),
+    "quicktype_log" => utils::open_file(utils::app_root().join("JsonEditor.log")),
     "update_log" => open(&app, conf::UPDATE_LOG_URL.to_string()),
     _ => (),
   }

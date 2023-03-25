@@ -12,9 +12,7 @@ use conf::AppConf;
 use log::info;
 
 use tauri_plugin_autostart::MacosLauncher;
-use tauri_plugin_log::{
-  LogTarget,
-};
+use tauri_plugin_log::LogTarget;
 
 fn main() {
   let app_conf = AppConf::read().write();
@@ -22,14 +20,14 @@ fn main() {
   let context = tauri::generate_context!();
 
   let mut log = tauri_plugin_log::Builder::default()
-  .targets([
-    // LogTarget::LogDir,
-    // LOG PATH: ~/.quickType/quickType.log
-    LogTarget::Folder(utils::app_root()),
-    LogTarget::Stdout,
-    LogTarget::Webview,
-  ])
-  .level(log::LevelFilter::Debug);
+    .targets([
+      // LogTarget::LogDir,
+      // LOG PATH: ~/.quickType/quickType.log
+      LogTarget::Folder(utils::app_root()),
+      LogTarget::Stdout,
+      LogTarget::Webview,
+    ])
+    .level(log::LevelFilter::Debug);
 
   let mut builder = tauri::Builder::default()
     .plugin(log.build())

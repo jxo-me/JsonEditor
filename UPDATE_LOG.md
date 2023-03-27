@@ -1,5 +1,9 @@
 # UPDATE LOG
 
+## v0.0.4
+
+Fix: macos menu
+
 ## v0.0.3
 
 Fix: warning and add update ok

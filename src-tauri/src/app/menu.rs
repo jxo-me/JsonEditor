@@ -8,6 +8,9 @@ use tauri::{
   SystemTrayMenu, SystemTrayMenuItem, WindowMenuEvent,
 };
 
+#[cfg(target_os = "macos")]
+use tauri::AboutMetadata;
+
 // --- Menu
 pub fn init() -> Menu {
   let app_conf = AppConf::read();

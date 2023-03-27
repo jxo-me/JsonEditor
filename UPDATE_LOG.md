@@ -1,5 +1,9 @@
 # UPDATE LOG
 
+## v0.0.5
+
+Fix: macos build ok
+
 ## v0.0.4
 
 Fix: macos menu

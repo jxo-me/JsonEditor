@@ -8,7 +8,7 @@ pub fn init(app: &mut App) -> std::result::Result<(), Box<dyn std::error::Error>
   let theme = AppConf::theme_mode();
   // let handle = app.app_handle();
 
-  let app_conf = app_conf.clone();
+  let app_conf2 = app_conf.clone();
   if app_conf.hide_dock_icon {
     #[cfg(target_os = "macos")]
     app.set_activation_policy(tauri::ActivationPolicy::Accessory);
@@ -21,14 +21,14 @@ pub fn init(app: &mut App) -> std::result::Result<(), Box<dyn std::error::Error>
         .title("JsonEditor")
         .resizable(true)
         .fullscreen(false)
-        .inner_size(app_conf.main_width, app_conf.main_height)
+        .inner_size(app_conf2.main_width, app_conf2.main_height)
         .theme(Some(theme))
-        .always_on_top(app_conf.stay_on_top);
+        .always_on_top(app_conf2.stay_on_top);
 
       #[cfg(target_os = "macos")]
       {
         main_win = main_win
-          .title_bar_style(app_conf.clone().titlebar())
+          .title_bar_style(app_conf2.clone().titlebar())
           .hidden_title(true);
       }
 

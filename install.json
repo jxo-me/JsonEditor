@@ -1,35 +1,35 @@
 {
-  "version": "v0.0.2",
-  "notes": "Fix: macos application name",
-  "pub_date": "2023-03-24T10:51:13.354Z",
+  "version": "v0.0.7",
+  "notes": "Fix: macos build",
+  "pub_date": "2023-03-27T02:17:05.010Z",
   "platforms": {
     "win64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLytmL085MXc2aUJmVFBQN0ZieUdvNU1kdnlTTVRIc0NnSHg3ei9NWHIxUlE2RkRjd1FFV3FCenZKM05HR1h1clluczZ3SjBnbTgxSS9jdytESThWVHdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0OTU1CWZpbGU6SnNvbkVkaXRvcl8wLjAuMl94NjRfemgtQ04ubXNpLnppcAorZE0zLzNnRnlHM0MxcXg4eDJSR1NaR2I5NlpldGZsMHNLbkRKWVp1cFJhVWhSVzFnMTllMGgvYXQ0d2hXSHhjQnd4OEZKY2R3amxYWEZ0SytSU0xCdz09Cg==",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_windows_x86_64.msi.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzZsN09mSVFhbVZxMkJPekhLOVNVZjZhTkJURmRSZ1RqQU1EVjV3OEg1RFV1TTBTUmFJUHM0aWthZHZuQXFzZUs1cG85VUJucnpFV2VBeE5tRjU2Z0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgzMjc2CWZpbGU6SnNvbkVkaXRvcl8wLjAuN194NjRfemgtQ04ubXNpLnppcAowcjRkaGVOTjZpVUhpT0Q4NmpQQ3pNYUZKQjdYT2p2K2ZOSUE4cVFldVFPTGo3MTVza1RiVVRGWWRBN2tpWjFURjJHS2JNY1plaFg3NHBMZU0vZkJDdz09Cg==",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_windows_x86_64.msi.zip"
     },
     "linux": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzdHNGZRcXZFWmJnUmJKbWNrSzZzNTB3bFFLcEp4WDZvNzBIV0txT0RNUlUzMUxsc2JZVVBVa1gzWU9yMEV6ZzlrMUNMY0VnZ3U2UTBKTFkrYWlXaXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0NjcxCWZpbGU6anNvbi1lZGl0b3JfMC4wLjJfYW1kNjQuQXBwSW1hZ2UudGFyLmd6Ck54TmYxbFEvMjBEcHJVRG9XOGFubmxRY3hCVVpzOHBNSDQ1cnRlTWF1TEJKOFZHT1VsR3ZTdCtndkZ6dThVanVwWTdoNnd5RnlXVWQwQnZ2MjB1T0NBPT0K",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_linux_x86_64.AppImage.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLy9ucVMzMVJIWW5ER1ljTkw2R2wwNWZJeW5lenp0Y3RCOStzWUhqMC9CTGsxUUJXb1RUSU1nOTFsdjNpTnVvVUlWTVQrRFFZU0lLM3BnVGJiMHhrVkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgyOTAyCWZpbGU6anNvbi1lZGl0b3JfMC4wLjdfYW1kNjQuQXBwSW1hZ2UudGFyLmd6CjVQc0cvR29kRTRydkp2Rkw1OGJDS1h6LzIydFVXc0tOYjlPaGtPMEhGR3psdTRCeitKYXFWVnpQTTgyL0VzQWh2K0xXTU4vUGdtMDI2dHAwUlNjU0N3PT0K",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_linux_x86_64.AppImage.tar.gz"
     },
     "darwin": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzNXTFRDOW5yRG0wTm8wR2cxYmNvTzhJcWJFeWVOYk8vNUNwQ2I4VUxYNzdpVWZCMndXMk9UQ0p1emJlcktrdWU0N2NUWTZyeXpjYTZienhFWnlNZXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0Njc4CWZpbGU6SnNvbkVkaXRvci5hcHAudGFyLmd6CjZTNnRRZjRpTVNaby85SkxwYXViRWJBMXZOUnVMbk5rTHB2eS9ZdVVKK3B1Q2dKZ3FJMHE1VWlJWndhUm5DaXB5TVo4K3daOFhCSXdnTGVmSmp2ZEJnPT0K",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_macos_x86_64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzdtVTZZbXR2QVB5cHdLUnl5L2Ryc0FXeEE0OG94ZlNFa3ZQRkgxUHhMaEVQREZleUpMbXovdG10WGZmUTI2VldGWVJ3VjRvUm1RcXV2Y0hFajRsdVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgyODQ1CWZpbGU6SnNvbkVkaXRvci5hcHAudGFyLmd6CmhvL2xoODFwVGhqNDRMY1hLN2U1UHdSTWxGa3pQdWd5a3FDRmRuVUhzWVc2TmZUZzIzQmtEQkNjV25vUDN0UEptS2t3NWFqWHJzaHY1bC9KZWxqV0N3PT0K",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_macos_x86_64.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzVjWmhBUXozbFVwQ2UwK1U5Z25hZ25BMnl3L1RZWkl0blVONHhWekRqWGcrTEZEcll1dlc0c1VTZFVEZGtOcUJSczZiejdKTVMrTUtGK2w0dlpiMXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0NjA2CWZpbGU6SnNvbkVkaXRvci5hcHAudGFyLmd6CjBVNzAvdWh0dmkrUHV2US9hY0UvNEJSalovNEpHNFVUdXl5QmFmL2VVOHN6RUpYdkZ0TkY1Y1p0c2F3ZGcvMkZtMEFQRCsyWjRLK2RINDh2ZXRYcUN3PT0K",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_macos_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzcybWhDaTVwSHQ5U3BZcGoycDNXN1NPaW1ENkZWMjlSVWRiR2lBUjNTMFFSaWErQWNaWnVpek5DdlY5VWJyZkpBS2xsRm1PQ2RidU5iTC93aGZ2RndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgyODk0CWZpbGU6SnNvbkVkaXRvci5hcHAudGFyLmd6ClBCZXU0TUw0RGprbVMwcFhzNW5Bb0pRNkhlR3MxbjcrM3Z5dkgzV3d2czZ0L2I2ZDhCdWtyT2tvbmM3cTN4MDRmTlV4V2xId2VMRXpXN3lyZ3BjcER3PT0K",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_macos_aarch64.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzNXTFRDOW5yRG0wTm8wR2cxYmNvTzhJcWJFeWVOYk8vNUNwQ2I4VUxYNzdpVWZCMndXMk9UQ0p1emJlcktrdWU0N2NUWTZyeXpjYTZienhFWnlNZXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0Njc4CWZpbGU6SnNvbkVkaXRvci5hcHAudGFyLmd6CjZTNnRRZjRpTVNaby85SkxwYXViRWJBMXZOUnVMbk5rTHB2eS9ZdVVKK3B1Q2dKZ3FJMHE1VWlJWndhUm5DaXB5TVo4K3daOFhCSXdnTGVmSmp2ZEJnPT0K",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_macos_x86_64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzdtVTZZbXR2QVB5cHdLUnl5L2Ryc0FXeEE0OG94ZlNFa3ZQRkgxUHhMaEVQREZleUpMbXovdG10WGZmUTI2VldGWVJ3VjRvUm1RcXV2Y0hFajRsdVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgyODQ1CWZpbGU6SnNvbkVkaXRvci5hcHAudGFyLmd6CmhvL2xoODFwVGhqNDRMY1hLN2U1UHdSTWxGa3pQdWd5a3FDRmRuVUhzWVc2TmZUZzIzQmtEQkNjV25vUDN0UEptS2t3NWFqWHJzaHY1bC9KZWxqV0N3PT0K",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_macos_x86_64.app.tar.gz"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzdHNGZRcXZFWmJnUmJKbWNrSzZzNTB3bFFLcEp4WDZvNzBIV0txT0RNUlUzMUxsc2JZVVBVa1gzWU9yMEV6ZzlrMUNMY0VnZ3U2UTBKTFkrYWlXaXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0NjcxCWZpbGU6anNvbi1lZGl0b3JfMC4wLjJfYW1kNjQuQXBwSW1hZ2UudGFyLmd6Ck54TmYxbFEvMjBEcHJVRG9XOGFubmxRY3hCVVpzOHBNSDQ1cnRlTWF1TEJKOFZHT1VsR3ZTdCtndkZ6dThVanVwWTdoNnd5RnlXVWQwQnZ2MjB1T0NBPT0K",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_linux_x86_64.AppImage.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLy9ucVMzMVJIWW5ER1ljTkw2R2wwNWZJeW5lenp0Y3RCOStzWUhqMC9CTGsxUUJXb1RUSU1nOTFsdjNpTnVvVUlWTVQrRFFZU0lLM3BnVGJiMHhrVkFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgyOTAyCWZpbGU6anNvbi1lZGl0b3JfMC4wLjdfYW1kNjQuQXBwSW1hZ2UudGFyLmd6CjVQc0cvR29kRTRydkp2Rkw1OGJDS1h6LzIydFVXc0tOYjlPaGtPMEhGR3psdTRCeitKYXFWVnpQTTgyL0VzQWh2K0xXTU4vUGdtMDI2dHAwUlNjU0N3PT0K",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_linux_x86_64.AppImage.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLytmL085MXc2aUJmVFBQN0ZieUdvNU1kdnlTTVRIc0NnSHg3ei9NWHIxUlE2RkRjd1FFV3FCenZKM05HR1h1clluczZ3SjBnbTgxSS9jdytESThWVHdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5NjU0OTU1CWZpbGU6SnNvbkVkaXRvcl8wLjAuMl94NjRfemgtQ04ubXNpLnppcAorZE0zLzNnRnlHM0MxcXg4eDJSR1NaR2I5NlpldGZsMHNLbkRKWVp1cFJhVWhSVzFnMTllMGgvYXQ0d2hXSHhjQnd4OEZKY2R3amxYWEZ0SytSU0xCdz09Cg==",
-      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.2/JsonEditor_0.0.2_windows_x86_64.msi.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUV1FEeTlEZzJuLzZsN09mSVFhbVZxMkJPekhLOVNVZjZhTkJURmRSZ1RqQU1EVjV3OEg1RFV1TTBTUmFJUHM0aWthZHZuQXFzZUs1cG85VUJucnpFV2VBeE5tRjU2Z0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjc5ODgzMjc2CWZpbGU6SnNvbkVkaXRvcl8wLjAuN194NjRfemgtQ04ubXNpLnppcAowcjRkaGVOTjZpVUhpT0Q4NmpQQ3pNYUZKQjdYT2p2K2ZOSUE4cVFldVFPTGo3MTVza1RiVVRGWWRBN2tpWjFURjJHS2JNY1plaFg3NHBMZU0vZkJDdz09Cg==",
+      "url": "https://github.com/jxo-me/JsonEditor/releases/download/v0.0.7/JsonEditor_0.0.7_windows_x86_64.msi.zip"
     }
   }
 }

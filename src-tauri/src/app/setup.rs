@@ -17,7 +17,7 @@ pub fn init(app: &mut App) -> std::result::Result<(), Box<dyn std::error::Error>
     tauri::async_runtime::spawn(async move {
       let link = "index.html";
       info!("main_window: {}", link);
-      let main_win = WindowBuilder::new(&app, "core", WindowUrl::App(link.into()))
+      let mut main_win = WindowBuilder::new(&app, "core", WindowUrl::App(link.into()))
         .title("JsonEditor")
         .resizable(true)
         .fullscreen(false)
